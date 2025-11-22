@@ -1,0 +1,262 @@
+/* Reset basique */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Application de la police sur le body */
+    /* AJOUT : Padding en haut pour éviter que le contenu ne soit masqué par le header fixe */
+    padding-top: 80px; 
+    /* AJOUT : Permet au défilement vers une ancre (ex: #top) de s'arrêter sous le header */
+    scroll-padding-top: 80px; 
+}
+
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    /* Glassmorphism background */
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Glassmorphism buttons */
+.header-right .btn {
+    text-decoration: none;
+    padding: 8px 20px;
+    margin-left: 15px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: #333;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.header-right .btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Hero / Diaporama plein écran */
+.hero {
+    position: relative;
+    height: 100vh; /* plein écran */
+    width: 100%;
+    overflow: hidden;
+    margin-top: -80px; /* Remonte le hero pour compenser le padding-top du body */
+}
+
+.slideshow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    filter: blur(2px);
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+    text-align: center;
+    z-index: 50; 
+    
+    /* MODIFICATION POUR INCLURE LE DRAPEAU AU-DESSUS DU TITRE */
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+/* AJOUT : Style pour le drapeau savoyard dans le hero */
+.hero-savoie-flag {
+    width: 60px; /* Taille par défaut */
+    height: auto;
+    margin-bottom: 10px; 
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5)); 
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* Section basse : philosophie / storytelling */
+.about {
+    text-align: left;
+    padding: 50px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    margin-top: -5px;
+}
+
+.about h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #222;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto 18px auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Mise en forme des titres de paragraphes dans le storytelling (balise strong) */
+.about p strong {
+    font-size: 1.15rem;
+    display: block; 
+    margin-bottom: 5px;
+    color: #000;
+}
+
+
+/* Illustration Ail des ours (illu_1), centrée et petite */
+.about .illu {
+    display: block;
+    margin: 20px auto 20px auto;
+    max-width: 200px;
+    height: auto;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Bloc Vallée de la Maurienne pleine largeur avec CTA */
+.maurienne-cta {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Image plein écran horizontale */
+.maurienne-bg {
+    width: 100%;
+    height: 60vh;      /* hauteur visible (ajustable) */
+    object-fit: cover;  /* recadre proprement sans déformer */
+    display: block;
+}
+
+/* Overlay pour centrer le bouton */
+.maurienne-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Bouton Les Pestos sur l'image : entouré en blanc */
+.maurienne-cta .btn {
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    border-radius: 20px;
+    border: 2px solid #ffffff;    /* contour blanc */
+    background: rgba(0, 0, 0, 0.25); /* fond semi-transparent pour contraste */
+    color: #fff;                  /* texte lisible sur l'image */
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    
+    body {
+        padding-top: 60px; /* Ajuster le padding du body pour un header plus petit */
+        scroll-padding-top: 60px;
+    }
+    
+    header {
+        padding: 10px 15px; /* Réduire le padding du header */
+    }
+    
+    .hero {
+        margin-top: -60px; /* Compenser le padding-top du body */
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    .hero-text p {
+        font-size: 1rem;
+    }
+    .header-right .btn {
+        padding: 6px 12px;
+        margin-left: 10px;
+        font-size: 0.9rem;
+    }
+    .slide {
+        height: 100%;
+    }
+    .about p {
+        font-size: 0.95rem;
+    }
+    .about p strong {
+        font-size: 1rem;
+    }
+    .about .illu {
+        max-width: 150px;
+    }
+    .maurienne-bg {
+        height: 40vh;  /* un peu moins haut sur mobile */
+    }
+    .maurienne-cta .btn {
+        font-size: 1rem;
+        padding: 10px 24px;
+        border-width: 2px; /* contour visible sur mobile */
+    }
+    
+    /* AJOUT RESPONSIVE : Ajuster la taille du drapeau sur mobile */
+    .hero-savoie-flag {
+        width: 40px;
+        margin-bottom: 5px;
+    }
+}
