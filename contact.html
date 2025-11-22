@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Marchés – Tartine & Chocolat</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Définition des couleurs éco-responsables */
+        :root {
+            --color-primary: #1e5631; /* Vert Forêt */
+            --color-secondary: #a4b494; /* Vert Cendre/Sauge */
+            --color-background: #f4f6f4; /* Blanc cassé/Crème */
+            --color-text: #2c2c2c; /* Gris foncé */
+        }
+
+        /* --- Styles Spécifiques à la Page Contact --- */
+        
+        body {
+            background-color: var(--color-background);
+            color: var(--color-text);
+            /* Le padding-top du body est déjà dans style.css */
+        }
+
+        main {
+            padding: 100px 40px 60px;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: var(--color-primary);
+            margin-bottom: 50px;
+        }
+
+        /* --- Section Infos Générales (Tél/Email) --- */
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--color-primary);
+        }
+
+        .contact-item span {
+            margin-left: 10px;
+            color: var(--color-text);
+            font-weight: normal;
+        }
+        
+        /* Iconographie (utiliser des icônes font-awesome ou équivalent si disponible, sinon des émojis) */
+        .contact-item::before {
+            content: '📞'; 
+            font-size: 1.5rem;
+            margin-right: 8px;
+        }
+        .contact-item:last-child::before {
+            content: '📧'; 
+        }
+
+
+        /* --- Section Formulaire / Marchés (Structure Bicolore) --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            text-align: left;
+        }
+
+        /* Cadres Glassmorphism pour les sections */
+        .glass-panel {
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.5); /* Base Glassmorphism */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .glass-panel h2 {
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            margin-bottom: 20px;
+        }
+
+        /* --- Section Marchés --- */
+        .marches {
+            background-color: var(--color-secondary); /* Fond du panneau Marchés */
+            color: white; /* Texte blanc sur fond vert */
+            background: linear-gradient(145deg, rgba(30, 86, 49, 0.9), rgba(164, 180, 148, 0.9));
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border: none;
+            color: #fff;
+        }
+        
+        .marches h2 {
+            color: #fff;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 10px;
+        }
+        
+        .marches p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .marches ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .marches ul li {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        /* --- Section Formulaire (Simulée) --- */
+        .formulaire input, .formulaire textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid var(--color-secondary);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            color: var(--color-text);
+        }
+        
+        .formulaire button {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .formulaire button:hover {
+            background-color: #143d22;
+        }
+        
+        /* Responsive */
+        @media (max-width: 850px) {
+            .grid-container {
+                grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .contact-item {
+                justify-content: center;
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-left">
+        <img src="images/drapeau_savoie.PNG" alt="Drapeau de la Savoie" class="logo">
+        <span class="brand-name">Tartine & Chocolat</span>
+    </div>
+    <nav class="header-right">
+        <a href="index.html" class="btn">Accueil</a>
+        <a href="pestos.html" class="btn">Les Pestos</a>
+        <a href="#top" class="btn">Contact</a> </nav>
+</header>
+
+<main id="top">
+
+    <h1>Nous Contacter et Nous Retrouver</h1>
+    
+    <div class="contact-info">
+        <div class="contact-item">Téléphone : <span>06 29 74 63 09</span></div>
+        <div class="contact-item">E-mail : <span>sylvia.andrieux@orange.fr</span></div>
+    </div>
+    
+    <div class="grid-container">
+        
+        <section class="glass-panel marches">
+            <h2>📍 Nos Rendez-vous Locaux</h2>
+            <p>
+                Rien ne vaut le plaisir de vous rencontrer ! Retrouvez toute l'année nos saveurs et nouveautés sur les marchés de **Savoie et Haute-Savoie**.
+            </p>
+            
+            <p style="font-style: italic;">
+                Nous sommes présents chaque semaine sur :
+            </p>
+            
+            <ul>
+                <li>INSERER LIEU ET DATE DU MARCHÉ</li>
+                            </ul>
+            
+            <p style="margin-top: 25px; font-weight: bold;">
+                Suivez-nous sur les réseaux sociaux pour les dates exceptionnelles et les marchés de saison !
+            </p>
+        </section>
+
+        <section class="glass-panel formulaire">
+            <h2>Écrivez-nous</h2>
+            <p style="margin-bottom: 25px; color: var(--color-text);">
+                Une question sur un ingrédient ? Une commande spéciale ? Nous vous répondrons rapidement.
+            </p>
+            <form action="#" method="POST">
+                <input type="text" name="nom" placeholder="Votre Nom et Prénom" required>
+                <input type="email" name="email" placeholder="Votre E-mail" required>
+                <input type="tel" name="telephone" placeholder="Votre Téléphone (optionnel)">
+                <textarea name="message" placeholder="Votre Message..." rows="6" required></textarea>
+                <button type="submit">Envoyer le Message</button>
+            </form>
+        </section>
+        
+    </div>
+
+</main>
+
+</body>
+</html>

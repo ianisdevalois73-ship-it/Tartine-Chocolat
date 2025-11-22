@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tartine & Chocolat | Pestos Artisanaux Ail des Ours</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="images/drapeau_savoie.PNG" alt="Drapeau de la Savoie" class="logo">
+            <span class="brand-name">Tartine & Chocolat</span>
+        </div>
+        <nav class="header-right">
+            <a href="#top" class="btn">Accueil</a>
+            <a href="pestos.html" class="btn">Les Pestos</a>
+            <a href="contact.html" class="btn">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="top">
+        <div class="slideshow">
+            <img src="images/diaporama_1.PNG" alt="Diapo 1" class="slide active">
+            <img src="images/diaporama_2.PNG" alt="Diapo 2" class="slide">
+            <img src="images/diaporama_3.PNG" alt="Diapo 3" class="slide">
+        </div>
+        <div class="hero-text">
+            <img src="images/drapeau_savoie.PNG" alt="Drapeau Savoyard" class="hero-savoie-flag">
+            <h1>Tartine & Chocolat</h1>
+            <p>à la rencontre entre tradition et renouveau</p>
+        </div>
+    </section>
+
+    <section class="about">
+        <h2>🌿 Notre Philosophie : Du Cœur des Montagnes à Votre Assiette 🍽️</h2>
+
+        <p>
+            <strong>L'ingrédient Secret : L'Ail des Ours de Maurienne</strong>
+            Notre histoire commence là où la nature est la plus pure : au cœur de la Vallée de la Maurienne, chaque printemps.
+        </p>
+
+        <img src="images/illu_1.PNG" alt="Illustration Ail des Ours" class="illu">
+
+        <p>
+            C'est ici que réside le secret de l'intensité et de la fraîcheur incomparables de nos pestos : l'Ail des Ours sauvage.
+        </p>
+
+        <p>
+            <strong>Une Cueillette Respectueuse :</strong> 
+            Loin des cultures industrielles, nous partons à la main, feuille après feuille, pour ne sélectionner que les pousses les plus tendres et les plus parfumées. C'est un travail de patience et de passion, garantissant que chaque pot de pesto est imprégné du meilleur de la nature.
+        </p>
+
+        <p>
+            <strong>Le Goût de l'Authentique :</strong> 
+            Cet ail sauvage, au goût subtil et puissant à la fois, compose la base unique et incontournable de tous nos pestos. Il confère à nos recettes ce caractère inimitable qui fait toute la différence.
+        </p>
+
+        <p>
+            <strong>👨‍🍳 De la Récolte au Pesto : Le Vrai Fait Maison</strong>
+            Votre pesto n'est pas simplement *fabriqué* ; il est *élaboré*.
+        </p>
+
+        <p>
+            Une fois l'ail des ours ramené de la Maurienne, il rejoint d'autres ingrédients de qualité rigoureusement sélectionnés, et tout le processus se fait dans notre atelier, **100% fait maison**.
+        </p>
+
+        <p>
+            <strong>Des Recettes Simples et Pures :</strong> 
+            Nous privilégions le goût. Pas d'artifices, pas de conservateurs, pas de colorants. Juste la fraîcheur de l'ail des ours, des noix et huiles de première qualité, et notre savoir-faire artisanal.
+        </p>
+
+        <p>
+            <strong>La Fraîcheur Préservée :</strong> 
+            C'est cette méthode artisanale qui assure une saveur maximale et une texture parfaite, fidèle à la tradition du pesto.
+        </p>
+
+        <p style="font-weight: bold; margin-top: 30px;">
+            ✨ En choisissant nos pestos, vous choisissez plus qu'un condiment : vous adoptez un morceau de nature sauvage, une tradition de cueillette manuelle et l'engagement du vrai fait maison.
+        </p>
+
+        <p style="font-size: 1.2rem; font-weight: bold; color: #333;">
+            **Découvrez la puissance du sauvage, la pureté du fait maison.**
+        </p>
+    </section>
+
+    <section class="maurienne-cta">
+        <img src="images/vallee_maurienne.PNG" alt="Vallée de la Maurienne, source de notre ail des ours" class="maurienne-bg">
+        <div class="maurienne-overlay">
+            <a href="pestos.html" class="btn">Découvrir Tous Nos Pestos</a>
+        </div>
+    </section>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let current = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+
+        setInterval(() => {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        }, 4000);
+    </script>
+</body>
+</html>
