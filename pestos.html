@@ -1,275 +1,275 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Les Pestos – Tartine & Chocolat</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Pestos – Tartine & Chocolat</title>
+<link rel="stylesheet" href="style.css">
+<style>
 
-    <style>
+body {
+  background: url("images/background_pestos.PNG") center/cover no-repeat fixed;
+  color: white;
+  padding-top: 80px;
+}
 
-        /* --- Fond d'écran et structure de base de la page --- */
-        body {
-            /* Image de fond de la page 'Les Pestos' */
-            background: url("images/background_pestos.PNG") center/cover no-repeat fixed;
-            color: white;
-            padding-top: 80px; /* Laisse de la place au header fixe (comme dans style.css) */
-        }
+main {
+  background: rgba(0, 0, 0, 0.2);
+  min-height: calc(100vh - 80px);
+  padding: 40px 40px 60px;
+  text-align: center;
+}
 
-        /* --- Contenu principal --- */
-        main {
-            /* Ajout d'un léger fond pour que le contenu ne soit pas perdu sur l'image */
-            background: rgba(0, 0, 0, 0.2); 
-            min-height: calc(100vh - 80px); /* Assure que le main remplisse le reste de l'écran */
-            padding: 40px 40px 60px;
-            text-align: center;
-        }
+h1 {
+  color: white;
+  font-size: 2.7rem;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px rgba(0,0,0,0.9);
+}
 
-        h1 {
-            color: white;
-            font-size: 2.7rem;
-            margin-bottom: 40px;
-            text-shadow: 0 0 10px rgba(0,0,0,0.9); /* Ombre forte pour lisibilité */
-        }
-        
-        /* Style pour le paragraphe descriptif sous le titre */
-        .description-pesto {
-            max-width: 800px; 
-            margin: 0 auto 30px; 
-            font-size: 1.1rem; 
-            text-shadow: 0 0 5px rgba(0,0,0,0.8);
-            line-height: 1.5;
-        }
+.description-pesto {
+  max-width: 800px;
+  margin: 0 auto 30px;
+  font-size: 1.1rem;
+  text-shadow: 0 0 5px rgba(0,0,0,0.8);
+  line-height: 1.5;
+}
 
-        /* --- Grille des pestos --- */
-        .pesto-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            justify-items: center;
-            margin-top: 40px;
-        }
+.pesto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  margin-top: 40px;
+}
 
-        /* --- Cartes pesto (Glassmorphism sur fond foncé) --- */
-        .pesto-card {
-            width: 280px;
-            padding: 20px;
-            border-radius: 15px;
-            /* Augmentation de l'opacité pour que le texte noir soit lisible */
-            background: rgba(255, 255, 255, 0.75); 
-            backdrop-filter: blur(8px);
-            color: #222; /* Texte principal foncé */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            text-align: left;
-            transition: transform 0.2s ease;
-        }
-        
-        .pesto-card:hover {
-            transform: translateY(-5px); /* Petit effet au survol */
-        }
+/* Badge "Nouveau" pour les nouveaux pestos */
+.pesto-card {
+  width: 280px;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  color: #222;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  text-align: left;
+  transition: transform 0.2s ease;
+  position: relative;
+}
 
-        .pesto-card h2 {
-            font-size: 1.4rem;
-            color: #000;
-            margin-bottom: 8px;
-            border-bottom: 2px solid rgba(0,0,0,0.1); 
-            padding-bottom: 5px;
-        }
+.pesto-card:hover {
+  transform: translateY(-5px);
+}
 
-        .pesto-card p {
-            font-style: italic;
-            margin-bottom: 12px;
-            color: #333;
-        }
+.pesto-card.nouveau::before {
+  content: 'Nouveau';
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  background: #2e7d32;
+  color: white;
+  font-size: 0.72rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
 
-        .pesto-card ul {
-            padding-left: 20px;
-            margin-top: 15px;
-            /* Utilisation d'un style de liste personnalisé pour l'esthétique */
-            list-style-type: none;
-        }
-        
-        .pesto-card ul li::before {
-            content: '🌿'; /* Émoji feuille */
-            margin-right: 8px;
-        }
+.pesto-card h2 {
+  font-size: 1.4rem;
+  color: #000;
+  margin-bottom: 8px;
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+  padding-bottom: 5px;
+}
 
-        .pesto-card ul li {
-            margin-bottom: 8px;
-            color: #111;
-        }
-        
-        /* Style pour la carte d'information qui prend toute la largeur */
-        .info-card {
-            width: auto; 
-            grid-column: 1 / -1; 
-            margin: 20px auto; 
-            max-width: 900px; 
-            text-align: center;
-        }
-        
-        /* Responsive spécifique aux cartes */
-        @media (max-width: 600px) {
-            .pesto-grid {
-                grid-template-columns: 1fr; 
-            }
-            .pesto-card {
-                width: 100%; 
-                max-width: 350px;
-            }
-        }
+.pesto-card p {
+  font-style: italic;
+  margin-bottom: 12px;
+  color: #333;
+}
 
-    </style>
+.pesto-card ul {
+  padding-left: 20px;
+  margin-top: 15px;
+  list-style-type: none;
+}
+
+.pesto-card ul li::before {
+  content: '🌿';
+  margin-right: 8px;
+}
+
+.pesto-card ul li {
+  margin-bottom: 8px;
+  color: #111;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.info-card {
+  width: auto;
+  grid-column: 1 / -1;
+  margin: 20px auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .pesto-grid {
+    grid-template-columns: 1fr;
+  }
+  .pesto-card {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+</style>
 </head>
-
 <body>
 
 <header>
-    <div class="header-left">
-        <img src="images/drapeau_savoie.PNG" alt="Drapeau de la Savoie" class="logo">
-        <span class="brand-name">Tartine & Chocolat</span>
-    </div>
-    <nav class="header-right">
-        <a href="index.html" class="btn">Accueil</a>
-        <a href="#top" class="btn">Les Pestos</a> <a href="contact.html" class="btn">Contact</a>
-    </nav>
+  <div class="header-left">
+    <img src="images/drapeau_savoie.PNG" alt="Drapeau de la Savoie" class="logo">
+    <span class="brand-name">Tartine & Chocolat</span>
+  </div>
+  <nav class="header-right">
+    <a href="index.html" class="btn">Accueil</a>
+    <a href="#top" class="btn">Les Pestos</a>
+    <a href="contact.html" class="btn">Contact</a>
+  </nav>
 </header>
 
-<main id="top"> <h1>Nos Créations Maison</h1>
+<main id="top">
+  <h1>Nos Créations Maison</h1>
+  <p class="description-pesto">
+    Chacune de nos recettes est élaborée avec l'Ail des Ours sauvage de Maurienne comme base (sauf le Pesto Basilic'Cahuète), ou d'autres ingrédients sauvages ou locaux rigoureusement sélectionnés. Nous garantissons une fraîcheur et une saveur incomparables !
+  </p>
 
-    <p class="description-pesto">
-        Chacune de nos recettes est élaborée avec l'Ail des Ours sauvage de Maurienne comme base (sauf le Pesto Basilic'Cahuète), ou d'autres ingrédients sauvages ou locaux rigoureusement sélectionnés. Nous garantissons une fraîcheur et une saveur incomparables !
-    </p>
+  <div class="pesto-grid">
 
-    <div class="pesto-grid">
+    <!-- NOUVEAUX PESTOS EN PREMIER -->
 
-        <div class="pesto-card">
-            <h2>Pesto Noix de l'Ours (100g)</h2>
-            <p>Le classique revisité, à la douceur de la noix de cajou.</p>
-            <ul>
-                <li>Ail des Ours (Cueilli en Maurienne)</li>
-                <li>Huile d'Olive</li>
-                <li>Noix de Cajou</li>
-                <li>Grana Padano (Fromage AOP)</li>
-                <li>Huile de Tournesol</li>
-            </ul>
-        </div>
-
-        <div class="pesto-card">
-            <h2>Pesto Tomat'Ours (100g)</h2>
-            <p>Une touche ensoleillée, fruitée par la noisette.</p>
-            <ul>
-                <li>Ail des Ours</li>
-                <li>Tomates (séchées ou concentré)</li>
-                <li>Noisettes</li>
-                <li>Huile d'Olive</li>
-                <li>Huile de Tournesol</li>
-                <li>Sel</li>
-            </ul>
-        </div>
-
-        <div class="pesto-card">
-            <h2>Pesto Tomat'Basilic (100g)</h2>
-            <p>L'alliance méditerranéenne entre basilic, tomate et le parfum de l'ail des ours.</p>
-            <ul>
-                <li>Tomates Séchées</li>
-                <li>Huile d'Olive</li>
-                <li>Huile de Tournesol</li>
-                <li>Basilic</li>
-                <li>Ail des Ours</li>
-                <li>Sel, Poivre</li>
-            </ul>
-        </div>
-
-        <div class="pesto-card">
-            <h2>Pesto Tomat'Basilic Piquant (100g)</h2>
-            <p>Le même goût ensoleillé, avec un coup de peps subtil.</p>
-            <ul>
-                <li>Tomates Séchées</li>
-                <li>Ail des Ours</li>
-                <li>Huile d'Olive</li>
-                <li>Huile de Tournesol</li>
-                <li>Basilic</li>
-                <li>Piment Doux</li>
-                <li>Sel, Poivre</li>
-            </ul>
-        </div>
-
-        <div class="pesto-card">
-            <h2>Pesto Basilic'Cahuète (100g)</h2>
-            <p>Une note originale, gourmande et croquante.</p>
-            <ul>
-                <li>Basilic</li>
-                <li>Cacahuètes</li>
-                <li>Grana Padano (Fromage AOP)</li>
-                <li>Huile de Tournesol</li>
-                <li>Huile d'Olive</li>
-            </ul>
-        </div>
-
-        <div class="pesto-card">
-            <h2>Pesto Orientale (100g)</h2>
-            <p>Voyagez avec des saveurs fraîches : coriandre et menthe.</p>
-            <ul>
-                <li>Coriandre</li>
-                <li>Menthe</li>
-                <li>Grana Padano (Fromage AOP)</li>
-                <li>Graines de Tournesol</li>
-                <li>Ail des Ours</li>
-                <li>Huile d'Olive, Huile de Tournesol</li>
-            </ul>
-        </div>
-
-        <div class="pesto-card">
-            <h2>Pesto Sauvage à l'Ortie (100g)</h2>
-            <p>Le goût de la montagne dans toute sa force nutritive.</p>
-            <ul>
-                <li>Ortie (Sauvage)</li>
-                <li>Ail des Ours</li>
-                <li>Noisette</li>
-                <li>Tomates (séchées ou concentré)</li>
-                <li>Citron, Poivre</li>
-                <li>Huile de Tournesol</li>
-            </ul>
-        </div>
-
-        <div class="pesto-card">
-            <h2>Pesto Menthe Marocaine (100g)</h2>
-            <p>Une fraîcheur vive, parfaite pour les plats d'été ou les grillades.</p>
-            <ul>
-                <li>Menthe</li>
-                <li>Citron</li>
-                <li>Noix de Cajou</li>
-                <li>Grana Padano (Fromage AOP)</li>
-                <li>Huile d'Olive, Huile de Tournesol</li>
-            </ul>
-        </div>
-
-        <div class="pesto-card">
-            <h2>Pesto Saveur d'Asie (100g)</h2>
-            <p>Un mariage surprenant de l'Ail des Ours et du Curcuma.</p>
-            <ul>
-                <li>Ail des Ours</li>
-                <li>Amandes</li>
-                <li>Olive</li>
-                <li>Grana Padano (Fromage AOP)</li>
-                <li>Curcuma</li>
-                <li>Sel, Poivre</li>
-                <li>Huile de Tournesol</li>
-            </ul>
-        </div>
-        
-        <div class="pesto-card info-card">
-            <p style="font-size: 1.1rem; font-style: normal; margin: 0; color: #111;">
-                Information Importante : Tous nos pestos sont confectionnés sans colorant ni conservateur. A conserver au frais.
-            </p>
-        </div>
-
-
+    <div class="pesto-card nouveau">
+      <h2>Pesto Rouge Paprika Fumé (100g)</h2>
+      <p>Une profondeur fumée et ensoleillée, portée par la douceur de l'amande.</p>
+      <ul>
+        <li>Paprika Fumé</li>
+        <li>Amandes</li>
+      </ul>
     </div>
 
+    <div class="pesto-card nouveau">
+      <h2>Pesto Soleil Indien (100g)</h2>
+      <p>Le parfum du basilic rencontre les épices dorées de l'Inde.</p>
+      <ul>
+        <li>Basilic</li>
+        <li>Curry</li>
+      </ul>
+    </div>
+
+    <div class="pesto-card nouveau">
+      <h2>Pesto Gingembre (100g)</h2>
+      <p>La puissance de l'ail des ours révélée par le piquant frais du gingembre.</p>
+      <ul>
+        <li>Ail des Ours</li>
+        <li>Gingembre</li>
+      </ul>
+    </div>
+
+    <!-- PESTOS EXISTANTS -->
+
+    <div class="pesto-card">
+      <h2>Pesto Noix de l'Ours (100g)</h2>
+      <p>Le classique revisité, à la douceur de la noix de cajou.</p>
+      <ul>
+        <li>Ail des Ours</li>
+        <li>Noix de Cajou</li>
+      </ul>
+    </div>
+
+    <div class="pesto-card">
+      <h2>Pesto Tomat'Ours (100g)</h2>
+      <p>Une touche ensoleillée, fruitée par la noisette.</p>
+      <ul>
+        <li>Tomates</li>
+        <li>Noisettes</li>
+      </ul>
+    </div>
+
+    <div class="pesto-card">
+      <h2>Pesto Tomat'Basilic (100g)</h2>
+      <p>L'alliance méditerranéenne entre basilic, tomate et le parfum de l'ail des ours.</p>
+      <ul>
+        <li>Tomates Séchées</li>
+        <li>Basilic</li>
+      </ul>
+    </div>
+
+    <div class="pesto-card">
+      <h2>Pesto Tomat'Basilic Piquant (100g)</h2>
+      <p>Le même goût ensoleillé, avec un coup de peps subtil.</p>
+      <ul>
+        <li>Tomates Séchées</li>
+        <li>Piment Doux</li>
+      </ul>
+    </div>
+
+    <div class="pesto-card">
+      <h2>Pesto Basilic'Cahuète (100g)</h2>
+      <p>Une note originale, gourmande et croquante.</p>
+      <ul>
+        <li>Basilic</li>
+        <li>Cacahuètes</li>
+      </ul>
+    </div>
+
+    <div class="pesto-card">
+      <h2>Pesto Orientale (100g)</h2>
+      <p>Voyagez avec des saveurs fraîches : coriandre et menthe.</p>
+      <ul>
+        <li>Coriandre</li>
+        <li>Menthe</li>
+      </ul>
+    </div>
+
+    <div class="pesto-card">
+      <h2>Pesto Sauvage à l'Ortie (100g)</h2>
+      <p>Le goût de la montagne dans toute sa force nutritive.</p>
+      <ul>
+        <li>Ortie Sauvage</li>
+        <li>Noisettes</li>
+      </ul>
+    </div>
+
+    <div class="pesto-card">
+      <h2>Pesto Menthe Marocaine (100g)</h2>
+      <p>Une fraîcheur vive, parfaite pour les plats d'été ou les grillades.</p>
+      <ul>
+        <li>Menthe</li>
+        <li>Citron</li>
+      </ul>
+    </div>
+
+    <div class="pesto-card">
+      <h2>Pesto Saveur d'Asie (100g)</h2>
+      <p>La chaleur dorée du curcuma sublimée par l'ail des ours sauvage.</p>
+      <ul>
+        <li>Ail des Ours</li>
+        <li>Curcuma</li>
+      </ul>
+    </div>
+
+    <div class="pesto-card info-card">
+      <p style="font-size: 1.1rem; font-style: normal; margin: 0; color: #111;">
+        Information importante : Tous nos pestos sont confectionnés sans colorant ni conservateur. A conserver au frais.
+      </p>
+    </div>
+
+  </div>
 </main>
 
 </body>
-
 </html>
